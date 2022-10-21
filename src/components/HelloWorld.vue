@@ -1,34 +1,18 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-    <p>
-      For a guide and recipes on how to configure / customize this project,<br>
-      check out the
-      <a href="https://cli.vuejs.org" target="_blank" rel="noopener">vue-cli documentation</a>.
-    </p>
-    <h3>Installed CLI Plugins</h3>
-    <ul>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel" target="_blank" rel="noopener">babel</a></li>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-router" target="_blank" rel="noopener">router</a></li>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-vuex" target="_blank" rel="noopener">vuex</a></li>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-eslint" target="_blank" rel="noopener">eslint</a></li>
-    </ul>
-    <h3>Essential Links</h3>
-    <ul>
-      <li><a href="https://vuejs.org" target="_blank" rel="noopener">Core Docs</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank" rel="noopener">Forum</a></li>
-      <li><a href="https://chat.vuejs.org" target="_blank" rel="noopener">Community Chat</a></li>
-      <li><a href="https://twitter.com/vuejs" target="_blank" rel="noopener">Twitter</a></li>
-      <li><a href="https://news.vuejs.org" target="_blank" rel="noopener">News</a></li>
-    </ul>
-    <h3>Ecosystem</h3>
-    <ul>
-      <li><a href="https://router.vuejs.org" target="_blank" rel="noopener">vue-router</a></li>
-      <li><a href="https://vuex.vuejs.org" target="_blank" rel="noopener">vuex</a></li>
-      <li><a href="https://github.com/vuejs/vue-devtools#vue-devtools" target="_blank" rel="noopener">vue-devtools</a></li>
-      <li><a href="https://vue-loader.vuejs.org" target="_blank" rel="noopener">vue-loader</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a></li>
-    </ul>
+
+    <div class="login">
+    <h2 class="title">Por Favor Inicie Sesion: </h2>
+    <form action class="form">
+      <label class="form-label" for="#email">Usuario:</label>
+      <input class="form-input" type="email" id="Usuario" required placeholder="Usuario"><br><br>
+      <label class="form-label" for="#password">Password:</label>
+      <input class="form-input" type="password" id="password" placeholder="Password"><br><br>
+      <input class="form-submit" type="submit" value="Login">
+    </form>
+  </div>
+    
   </div>
 </template>
 
@@ -42,7 +26,7 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style  scoped>
 h3 {
   margin: 40px 0 0;
 }
@@ -56,5 +40,60 @@ li {
 }
 a {
   color: #42b983;
+}
+
+
+
+<style lang="css" scoped>
+.login {
+  padding: 2rem;
+}
+
+.title {
+  text-align: center;
+}
+.form {
+  margin: 3rem auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 20%;
+  min-width: 350px;
+  max-width: 100%;
+  background: rgba(228, 232, 235, 0.9);
+  border-radius: 5px;
+  padding: 40px;
+  box-shadow: 0 4px 10px 4px rgba(136, 21, 21, 0.3);
+}
+.form-label {
+  margin-top: 2rem;
+  color: rgb(8, 8, 8);
+  margin-bottom: 0.5rem;
+  &:first-of-type {
+    margin-top: 0rem;
+  }
+}
+.form-input {
+  padding: 10px 15px;
+  background: none;
+  background-image: none;
+  border: 1px solid rgb(17, 17, 17);
+  color: white;
+  &:focus {
+    outline: 0;
+    border-color: #1ab188;
+  }
+}
+.form-submit {
+  background: #1ab188;
+  border: none;
+  color: white;
+  margin-top: 3rem;
+  padding: 1rem 0;
+  cursor: pointer;
+  transition: background 0.2s;
+  &:hover {
+    background: #0b9185;
+  }
 }
 </style>
