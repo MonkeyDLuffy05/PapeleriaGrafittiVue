@@ -3,6 +3,7 @@
     <nav><br>
       <router-link to="/">Papeleria</router-link> |
       <router-link to="/Administrador-View">Administrador</router-link>  |
+      <router-link to="/Vendedor">Vendedor</router-link>|
       <router-link to="/Cliente">Cliente</router-link>
     </nav>
     <router-view/>

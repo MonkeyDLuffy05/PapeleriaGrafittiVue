@@ -1,12 +1,26 @@
 <template>
-    <div class="factura">
+    <div class="cliente">
         <fieldset>
 
-            <legend>Factura</legend>
-            <form action="">
-
-
-            </form>
+            <legend>Tabla de Clientes</legend>
+            <table>
+        <tr>
+          <th>id</th>
+          <th>Nombre</th>
+          <th>Telefono</th>
+          <th>Direccion</th>
+          <th>Documento</th>
+          <th>Email</th>
+        </tr>
+        <tr v-for="cliente in clientes" :key="cliente.idCliente">
+          <td>{{ cliente.idCliente }}</td>
+          <td>{{ cliente.nombreCliente }}</td>
+          <td>{{ cliente.telefonoCliente }}</td>
+          <td>{{ cliente.direccionCliente }}</td>
+          <td>{{ cliente.documentoCliente }}</td>
+          <td>{{ cliente.emailCliente }}</td>
+        </tr>
+      </table>
 
         </fieldset>
 
@@ -16,8 +30,15 @@
 
 <script>
 export default {
-    name: "factura-view"
-}
+    name: "tablaClientes",
+    
+  props: {
+    clientes: {
+      type: Array,
+    }
+  },
+  methods: {},
+};
 </script>
 
 <style>
@@ -159,5 +180,26 @@ div {
     border-radius: 5px;
     background-color: #f2f2f2;
     padding: 20px;
+}
+
+
+.tbCuidadores {
+  padding: 5%;
+  text-align: center;
+}
+table {
+  border: 1px solid #000;
+  margin: auto;
+  padding: 1 px;
+}
+th {
+  border: 1px solid #000;
+}
+tr,
+td {
+  width: 20%;
+  text-align: left;
+  vertical-align: top;
+  border: 1px solid #000;
 }
 </style>

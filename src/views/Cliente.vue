@@ -1,8 +1,10 @@
 <template>
-    <div class="Cliente">
+    <div class="Clientes">
         <h1>Bienvenido Cliente</h1>
-        <FormularioFactura />
-        <Factura />
+       
+       
+    <formularioCliente @refresh="refrescar" />
+    <tablaClientes :clientes="clientes" />
 
     </div>
 
@@ -11,18 +13,49 @@
 
 
 <script>
-import FormularioFactura from '@/components/formularioFactura.vue';
-import Factura from '../components/factura.vue';
+import formularioCliente from '@/components/formularioCliente.vue';
+import tablaClientes from '../components/tablaClientes.vue';
+import axios from "axios";
 
 
 export default {
-    name: "Vendedor-view",
-    components: { FormularioFactura, Factura }
-}
+    name: "Cliente-view",
+    components: { 
+        formularioCliente, 
+        tablaClientes,
+     },
+
+data: () => ({
+    clientes: [],
+  }),
+  mounted() {
+    this.getClientes();
+  },
+  methods: {
+    refrescar() {
+      this.getClientes();
+    },
+    getClientes() {
+      axios
+        .get("http://150.136.145.84:8080/papeleriaGrafiti/api/cliente/listar")
+
+        
+    
+        .then((response) => {
+          this.clientes = response.data;
+        });
+    },
+  },
+};
+
+
 </script>
 
 
-
-<style>
-
+<style scoped>
+.cliente {
+  text-align: center;
+}
 </style>
+
+
